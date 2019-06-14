@@ -9,7 +9,7 @@ Dockerfiles for running headless x11 apps 📦🤕✨
 ### Create a `Dockerfile` in your project
 
 ```
-FROM docker-xvfb:stable
+FROM bengreenier/docker-xvfb:stable
 # install glxgears
 RUN apt-get update -y \
   && apt-get install --no-install-recommends -y mesa-utils \
