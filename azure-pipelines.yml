@@ -6,7 +6,8 @@ pool:
 
 steps:
 - script: npm install
-- script: npm build
+- script: npm run lint
+- script: npm run build
 - script: npm test
 - task: Docker@2
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
@@ -15,8 +16,9 @@ steps:
     repository: 'bengreenier/docker-xvfb'
     command: 'push'
     tags: |
-      docker-xvfb:latest
       docker-xvfb:stable
       docker-xvfb:stable-slim
+      docker-xvfb:stretch
+      docker-xvfb:stretch-slim
       docker-xvfb:buster
       docker-xvfb:buster-slim
