@@ -1,0 +1,22 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: npm install
+- script: npm build
+- script: npm test
+- task: Docker@2
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+  inputs:
+    containerRegistry: 'bengreenier - dockerhub'
+    repository: 'bengreenier/docker-xvfb'
+    command: 'push'
+    tags: |
+      docker-xvfb:latest
+      docker-xvfb:stable
+      docker-xvfb:stable-slim
+      docker-xvfb:buster
+      docker-xvfb:buster-slim

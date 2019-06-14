@@ -1,0 +1,30 @@
+{
+  "name": "docker-xvfb",
+  "version": "1.0.0",
+  "description": "dockerfiles for running headless x11 apps",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "build": "npm run build-stable && npm run build-stable-slim && npm run build-stretch && npm run build-stretch-slim && npm run build-buster && npm run build-buster-slim",
+    "build-stable": "docker build ./docker -f ./docker/stable.Dockerfile -t docker-xvfb:stable",
+    "build-stable-slim": "docker build ./docker -f ./docker/stable-slim.Dockerfile -t docker-xvfb:stable-slim",
+    "build-stretch": "docker build ./docker -f ./docker/stretch.Dockerfile -t docker-xvfb:stretch",
+    "build-stretch-slim": "docker build ./docker -f ./docker/stretch-slim.Dockerfile -t docker-xvfb:stretch-slim",
+    "build-buster": "docker build ./docker -f ./docker/buster.Dockerfile -t docker-xvfb:buster",
+    "build-buster-slim": "docker build ./docker -f ./docker/buster-slim.Dockerfile -t docker-xvfb:buster-slim",
+    "lint": "cat **/*.Dockerfile | dockerfilelint",
+    "test": "npm run test-stable && npm run test-stable-slim && npm run test-stretch && npm run test-stretch-slim && npm run test-buster && npm run test-buster-slim",
+    "test-stable": "docker build ./examples -f ./examples/stable.Dockerfile -t example-test:stable && docker run -it example-test:stable date",
+    "test-stable-slim": "docker build ./examples -f ./examples/stable-slim.Dockerfile -t example-test:stable-slim && docker run -it example-test:stable-slim date",
+    "test-stretch": "docker build ./examples -f ./examples/stretch.Dockerfile -t example-test:stretch && docker run -it example-test:stretch date",
+    "test-stretch-slim": "docker build ./examples -f ./examples/stretch-slim.Dockerfile -t example-test:stretch-slim && docker run -it example-test:stretch-slim date",
+    "test-buster": "docker build ./examples -f ./examples/buster.Dockerfile -t example-test:buster && docker run -it example-test:buster date",
+    "test-buster-slim": "docker build ./examples -f ./examples/buster-slim.Dockerfile -t example-test:buster-slim && docker run -it example-test:buster-slim date"
+  },
+  "author": "Ben Greenier",
+  "license": "MIT",
+  "dependencies": {
+    "dockerfilelint": "replicatedhq/dockerfilelint#semver:^1.5.0"
+  }
+}
