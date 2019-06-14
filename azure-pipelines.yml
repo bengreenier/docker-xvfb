@@ -16,9 +16,9 @@ steps:
     repository: 'bengreenier/docker-xvfb'
     command: 'push'
     tags: |
-      docker-xvfb:stable
-      docker-xvfb:stable-slim
-      docker-xvfb:stretch
-      docker-xvfb:stretch-slim
-      docker-xvfb:buster
-      docker-xvfb:buster-slim
+      stable
+      stable-slim
+      stretch
+      stretch-slim
+      buster
+      buster-slim
