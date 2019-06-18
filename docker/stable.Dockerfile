@@ -1,7 +1,7 @@
 FROM debian:stable
 WORKDIR /usr/bin
 RUN apt-get update -y \
-  && apt-get install --no-install-recommends -y xvfb \
+  && apt-get install --no-install-recommends -y xvfb libgl1-mesa-dri \
   && rm -rf /var/lib/apt/lists/*
 COPY xvfb-startup.sh .
 RUN sed -i 's/\r$//' xvfb-startup.sh
