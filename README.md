@@ -37,6 +37,13 @@ Are based on [their debian variants](https://github.com/debuerreotype/docker-deb
 + `buster`
 + `buster-slim`
 
+## Image Arguments
+
+These images support [build-time variables](https://docs.docker.com/engine/reference/commandline/build/#set-build-time-variables---build-arg) for customization.
+
++ `RESOLUTION` - Configures the X screen buffer. Default: `1920x1080x24`
++ `XARGS` - Configures X with additional arguments. Default: `""` (no value)
+
 ## License
 
 MIT
