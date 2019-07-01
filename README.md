@@ -1,6 +1,6 @@
 # docker-xvfb
 
-[![Build Status](https://b3ngr33ni3r.visualstudio.com/docker-xvfb/_apis/build/status/bengreenier.docker-xvfb?branchName=master)](https://b3ngr33ni3r.visualstudio.com/docker-xvfb/_build/latest?definitionId=8&branchName=master)
+[![Build Status](https://dev.azure.com/bengreenier/docker-xvfb/_apis/build/status/bengreenier.docker-xvfb?branchName=master)](https://b3ngr33ni3r.visualstudio.com/docker-xvfb/_build/latest?definitionId=8&branchName=master)
 
 Dockerfiles for running headless x11 apps 📦🤕✨
 
