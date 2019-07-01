@@ -34,6 +34,8 @@ Are based on [their debian variants](https://github.com/debuerreotype/docker-deb
 + `stable-slim`
 + `stretch`
 + `strech-slim`
++ `jessie`
++ `jessie-slim`
 + `buster`
 + `buster-slim`
 
