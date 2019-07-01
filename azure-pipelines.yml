@@ -20,5 +20,7 @@ steps:
       stable-slim
       stretch
       stretch-slim
+      jessie
+      jessie-slim
       buster
       buster-slim
